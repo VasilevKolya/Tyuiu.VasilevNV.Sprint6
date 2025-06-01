@@ -17,4 +17,4 @@ namespace Tyuiu.VasilevNV.Sprint6.Task0.V7
                 Application.Run(new Form1());
             }
         }
-    }
+    } 
