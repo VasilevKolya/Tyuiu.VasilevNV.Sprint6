@@ -18,7 +18,7 @@ namespace Tyuiu.VasilevNV.Sprint6.Task6.V16.Lib
                     {
                         if (word.Contains('b'))
                         {
-                            resStr += word + "" ;    
+                            resStr += word + " " ;    
                         }
 
                     }
