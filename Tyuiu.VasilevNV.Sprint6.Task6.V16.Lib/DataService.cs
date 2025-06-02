@@ -5,27 +5,32 @@ namespace Tyuiu.VasilevNV.Sprint6.Task6.V16.Lib
     {
         public string CollectTextFromFile(string path)
         {
-            string resStr = "";
+            string words = ""; ;
             using (StreamReader reader = new StreamReader(path))
             {
-                while (!reader.EndOfStream)
+                bool first = true;
+                string line;
+                while ((line = reader.ReadLine()) != null)
                 {
-                    string line = reader.ReadLine();
-
-                    string[] words = line.Split(' ');
-
-                    foreach (string word in words)
+                    string[] linewords = line.Split(' ');
+                    foreach (string word in linewords)
                     {
                         if (word.Contains('b'))
                         {
-                            resStr += word + " " ;    
+                            if (first == true)
+                            {
+                                words += word;
+                                first = false;
+                            }
+                            else
+                            {
+                                words = words + " " + word;
+                            }
                         }
-
                     }
                 }
             }
-            return resStr;
-
+            return words;
         }
     }
 }
